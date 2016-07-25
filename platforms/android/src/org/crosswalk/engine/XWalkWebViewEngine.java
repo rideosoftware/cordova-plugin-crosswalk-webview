@@ -31,6 +31,8 @@ import android.view.View;
 import java.io.File;
 import java.io.IOException;
 
+import java.util.Map;
+
 import junit.framework.Assert;
 
 import org.apache.cordova.CordovaBridge;
@@ -300,6 +302,15 @@ public class XWalkWebViewEngine implements CordovaWebViewEngine {
             return;
         }
         webView.load(url, null);
+    }
+
+    @Override
+    public void loadUrl(String url, boolean clearNavigationStack, Map<String,String> headers) {
+        if (!activityDelegate.isXWalkReady()) {
+            startUrl = url;
+            return;
+        }
+        webView.load(url, null, headers);
     }
 
     public boolean isXWalkReady() {
