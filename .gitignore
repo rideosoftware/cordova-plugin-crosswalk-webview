@@ -1,4 +1,19 @@
 platforms/android/libs/xwalk_core_library/build/
 platforms/android/libs/xwalk_core_library/build.gradle
-*.iml
 
+*.csproj.user
+*.suo
+*.cache
+Thumbs.db
+*.DS_Store
+
+*.bak
+*.log
+*.swp
+*.user
+
+# PhpStorm
+.idea/
+*.iml
+*.ipr
+*.iws
